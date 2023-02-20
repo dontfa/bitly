@@ -5,7 +5,6 @@ import os
 import argparse
 
 TOKEN = os.environ['TOKEN_BITLY']
-#TOKEN = '8ac8ab4690b382ed629df286f6c744af4a922f0e'
 URL_BITLY_API_SHORTEN = 'https://api-ssl.bitly.com/v4/shorten'
 
 
