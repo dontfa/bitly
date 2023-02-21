@@ -4,8 +4,8 @@ from urllib.parse import urlparse
 import os
 import argparse
 
-TOKEN = os.environ['TOKEN_BITLY']
-URL_BITLY_API_SHORTEN = 'https://api-ssl.bitly.com/v4/shorten'
+TOKEN = os.environ['BITLY_TOKEN']
+BITLY_API_SHORTEN_URL = 'https://api-ssl.bitly.com/v4/shorten'
 
 
 def shorten_link(token, long_url):
@@ -19,7 +19,7 @@ def shorten_link(token, long_url):
         "domain": "bit.ly"
     }
 
-    response = requests.post(URL_BITLY_API_SHORTEN, headers=headers, data=json.dumps(data_for_post))
+    response = requests.post(BITLY_API_SHORTEN_URL, headers=headers, data=json.dumps(data_for_post))
     response.raise_for_status()
 
     resp_json = response.json()
