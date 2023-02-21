@@ -56,7 +56,6 @@ def is_bitlink(token, link):
 
 
 def main():
-    #user_link = input("Введите ссылку: ")
     parser = argparse.ArgumentParser()
     parser.add_argument('link', help='ссылка bitly или любая ссылка https')
     args = parser.parse_args()
