@@ -8,12 +8,10 @@ BITLY_API_SHORTEN_URL = 'https://api-ssl.bitly.com/v4/shorten'
 def shorten_link(token, long_url):
     headers = {
         'Authorization': f'{token}',
-        'Content-Type': 'application/json',
     }
 
     data_for_post = {
         "long_url": long_url,
-        "domain": "bit.ly"
     }
 
     response = requests.post(BITLY_API_SHORTEN_URL, headers=headers, json = data_for_post)
