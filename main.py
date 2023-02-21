@@ -10,15 +10,14 @@ def shorten_link(token, long_url):
         'Authorization': f'{token}',
     }
 
-    data_for_post = {
+    payload = {
         "long_url": long_url,
     }
 
-    response = requests.post(BITLY_API_SHORTEN_URL, headers=headers, json = data_for_post)
+    response = requests.post(BITLY_API_SHORTEN_URL, headers=headers, json = payload)
     response.raise_for_status()
 
-    resp_json = response.json()
-    return resp_json['link']
+    return response.json()['link']
 
 
 def count_clicks(token, link):
@@ -34,8 +33,8 @@ def count_clicks(token, link):
     response = requests.get(url, headers=headers)
     response.raise_for_status()
 
-    resp_json = response.json()
-    return resp_json['total_clicks']
+    
+    return response.json()['total_clicks']
 
 
 def is_bitlink(token, link):
