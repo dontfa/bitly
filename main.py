@@ -1,5 +1,4 @@
 import requests
-import json
 from urllib.parse import urlparse
 import os
 import argparse
@@ -17,7 +16,7 @@ def shorten_link(token, long_url):
         "domain": "bit.ly"
     }
 
-    response = requests.post(BITLY_API_SHORTEN_URL, headers=headers, data=json.dumps(data_for_post))
+    response = requests.post(BITLY_API_SHORTEN_URL, headers=headers, json = data_for_post)
     response.raise_for_status()
 
     resp_json = response.json()
