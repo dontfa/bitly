@@ -4,9 +4,7 @@ from urllib.parse import urlparse
 import os
 import argparse
 
-TOKEN = os.environ['BITLY_TOKEN']
 BITLY_API_SHORTEN_URL = 'https://api-ssl.bitly.com/v4/shorten'
-
 
 def shorten_link(token, long_url):
     headers = {
@@ -74,4 +72,5 @@ def main():
 
 
 if __name__ == '__main__':
+    TOKEN = os.environ['BITLY_TOKEN']
     main()
