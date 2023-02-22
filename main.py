@@ -21,8 +21,8 @@ def shorten_link(token, long_url):
 
 
 def count_clicks(token, link):
-    parsed = urlparse(link)
-    bitlink = f'{parsed.netloc}{parsed.path}'
+    parsed_link = urlparse(link)
+    bitlink = f'{parsed_link.netloc}{parsed_link.path}'
 
     url = f'https://api-ssl.bitly.com/v4/bitlinks/{bitlink}/clicks/summary'
 
@@ -38,8 +38,8 @@ def count_clicks(token, link):
 
 
 def is_bitlink(token, link):
-    parsed = urlparse(link)
-    bitlink = f'{parsed.netloc}{parsed.path}'
+    parsed_link = urlparse(link)
+    bitlink = f'{parsed_link.netloc}{parsed_link.path}'
 
     url = f'https://api-ssl.bitly.com/v4/bitlinks/{bitlink}'
 
