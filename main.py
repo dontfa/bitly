@@ -14,7 +14,7 @@ def shorten_link(token, long_url):
         "long_url": long_url,
     }
 
-    response = requests.post(BITLY_API_SHORTEN_URL, headers=headers, json = payload)
+    response = requests.post(BITLY_API_SHORTEN_URL, headers=headers, json=payload)
     response.raise_for_status()
 
     return response.json()['link']
