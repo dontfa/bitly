@@ -52,6 +52,8 @@ def is_bitlink(token, link):
 
 
 def main():
+    TOKEN = os.environ['BITLY_TOKEN']
+    
     parser = argparse.ArgumentParser()
     parser.add_argument('link', help='ссылка bitly или любая ссылка https')
     args = parser.parse_args()
@@ -67,5 +69,4 @@ def main():
 
 
 if __name__ == '__main__':
-    TOKEN = os.environ['BITLY_TOKEN']
     main()
