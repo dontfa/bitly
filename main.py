@@ -52,7 +52,7 @@ def is_bitlink(token, link):
 
 
 def main():
-    TOKEN = os.environ['BITLY_TOKEN']
+    token = os.environ['BITLY_TOKEN']
     
     parser = argparse.ArgumentParser()
     parser.add_argument('link', help='ссылка bitly или любая ссылка https')
@@ -60,10 +60,10 @@ def main():
     user_link = args.link
 
     try:
-        if is_bitlink(TOKEN, user_link):
-            print(count_clicks(TOKEN, user_link))
+        if is_bitlink(token, user_link):
+            print(count_clicks(token, user_link))
         else:
-            print(shorten_link(TOKEN, user_link))
+            print(shorten_link(token, user_link))
     except requests.exceptions.HTTPError as ex:
         print(ex)
 
