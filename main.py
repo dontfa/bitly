@@ -3,7 +3,9 @@ from urllib.parse import urlparse
 import os
 import argparse
 
+
 BITLY_API_SHORTEN_URL = 'https://api-ssl.bitly.com/v4/shorten'
+
 
 def shorten_link(token, long_url):
     headers = {
@@ -32,7 +34,6 @@ def count_clicks(token, link):
 
     response = requests.get(url, headers=headers)
     response.raise_for_status()
-
     
     return response.json()['total_clicks']
 
